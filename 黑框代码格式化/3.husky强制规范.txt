@@ -23,13 +23,13 @@ npx husky add .husky/pre-commit
 8.往第7步生成的文件中写入 (替换undefined)
 npx lint-staged
 
-9.在package.json文件中配置
+9.在package.json文件中新增配置（记得删注释）
 
 "lint-staged": {
-   "src/**/*.{js,vue}": [      //src目录下所有的js和vue文件
+  "src/**/*.{js,vue}": [      //src目录下所有的js和vue文件
      "eslint --fix",           // 自动修复
      "git add"                 // 自动提交时修复
-   ]
- }
+  ]
+}
 
 
