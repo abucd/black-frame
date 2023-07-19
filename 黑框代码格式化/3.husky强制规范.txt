@@ -1,0 +1,35 @@
+1.使用husky进行强制git代码提交规范
+pnpm install --save-dev @commitlint/config-conventional @commitlint/cli
+pnpm install husky --save-dev
+npx husky install
+
+2.导入commitlint配置文件，文件在3.3中
+
+4.在package.json中新增指令
+"prepare": "husky install"
+
+5.并执行
+npm run prepare
+
+6.新增husky配置文件 并往里面写入
+在命令行运行
+npx husky add .husky/commit-msg
+在husky新增的文件中写入（把undefined替换）
+npx --no-install commitlint --edit
+
+7.使用husky强制代码格式化  创建配置文件
+npx husky add .husky/pre-commit
+
+8.往第7步生成的文件中写入 (替换undefined)
+npx lint-staged
+
+9.在package.json文件中配置
+
+"lint-staged": {
+   "src/**/*.{js,vue}": [      //src目录下所有的js和vue文件
+     "eslint --fix",           // 自动修复
+     "git add"                 // 自动提交时修复
+   ]
+ }
+
+

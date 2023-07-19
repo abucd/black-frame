@@ -1,0 +1,11 @@
+1.安装方式
+npm install -g pnpm
+
+2.设置镜像
+pnpm config set registry https://registry.npmmirror.com
+
+（若出问题需要还原使用下面代码，否则不用）
+pnpm config set registry https://registry.npmjs.org
+
+3.创建项目
+pnpm create vue

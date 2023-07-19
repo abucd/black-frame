@@ -1,0 +1,18 @@
+// git代码提交规范
+
+1.安装commitizen和cz-customizable
+pnpm i  commitizen -D
+pnpm add cz-customizable -save-dev
+
+2.在package.json中进行新增
+"config": {
+  "commitizen": {
+    "path": "node_modules/cz-customizable"
+  }
+}
+
+3.在根目录下新建.cz-config.js文件并写入配置 
+   文件在 git规范配置2.4 这个文件夹中  
+   之后就可以用 git cz 来代替 git commit
+   需要先关联仓库 然后git init 再git add . 最后git cz
+   关联提交时，不要开加速器。

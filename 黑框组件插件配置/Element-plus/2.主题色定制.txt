@@ -1,0 +1,28 @@
+1.安装scss
+pnpm i sass -D
+
+2.准备定制样式文件 将 文件夹下2.3ui样式 导入到src/styles/element中
+
+4.修改vite.config.js中的代码
+
+export default defineConfig({
+  // ...
+  plugins: [
+    // ...
+    Components({
+      // 1. 配置elementPlus采用sass样式配色系统
+      resolvers: [ElementPlusResolver()],
+    }),
+  ],
+  // ...
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // 2. 自动导入定制化样式文件进行样式覆盖
+        additionalData: `
+        @use "@/styles/element/index.scss" as *;
+        `
+      }
+    }
+  }
+})

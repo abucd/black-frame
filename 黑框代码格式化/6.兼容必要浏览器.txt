@@ -1,0 +1,7 @@
+在package.json中添加下面这段话:
+
+"browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+]

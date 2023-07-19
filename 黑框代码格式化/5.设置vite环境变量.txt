@@ -1,0 +1,9 @@
+1.在项目根目录中导入 文件夹5.2vite环境配置 中的俩文件
+
+3.在vite.config.js中：
+
+export default defineConfig({
+    //...
+    base: process.env.VITE_BASE_URL, // 这会根据环境变量的值来设置
+    //...
+})
